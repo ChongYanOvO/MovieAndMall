@@ -14,6 +14,6 @@ public class LoginConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginStatusInterceptor)//添加拦截器
                 .addPathPatterns("/**")//添加拦截路径
-                .excludePathPatterns("/api/user/login","/api/user/login2");//配置排除路径
+                .excludePathPatterns("/api/user/login","/api/user/adminLogin");//配置排除路径
     }
 }

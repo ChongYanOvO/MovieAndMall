@@ -1,6 +1,7 @@
 package com.mars.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @since 2021-12-26 19:37:48
  */
 @SuppressWarnings("serial")
+@Data
 public class AdminUser extends Model<AdminUser> {
     //管理员id
     private Long adminUserId;
@@ -23,46 +25,6 @@ public class AdminUser extends Model<AdminUser> {
     //是否锁定 0未锁定 1已锁定无法登陆
     private Integer locked;
 
-
-    public Long getAdminUserId() {
-        return adminUserId;
-    }
-
-    public void setAdminUserId(Long adminUserId) {
-        this.adminUserId = adminUserId;
-    }
-
-    public String getLoginUserName() {
-        return loginUserName;
-    }
-
-    public void setLoginUserName(String loginUserName) {
-        this.loginUserName = loginUserName;
-    }
-
-    public String getLoginPassword() {
-        return loginPassword;
-    }
-
-    public void setLoginPassword(String loginPassword) {
-        this.loginPassword = loginPassword;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public Integer getLocked() {
-        return locked;
-    }
-
-    public void setLocked(Integer locked) {
-        this.locked = locked;
-    }
 
     /**
      * 获取主键值

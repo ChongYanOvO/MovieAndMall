@@ -45,8 +45,15 @@ public class UserController {
         return new Result(ErrorCodeEnum.USER_ERROR_A0201.getCode(), ErrorCodeEnum.USER_ERROR_A0201.getDescription(), null);
     }
 
-    public Result loginAdmin(AdminUser adminUser) {
-        return null;
+    @PostMapping("adminLogin")
+    public Result loginAdmin(@RequestBody AdminUser adminUser) {
+        if (adminUser != null) {
+            String token = adminUserService.login(adminUser);
+            if (token != null) {
+                return new Result(ErrorCodeEnum.SUCCESS.getCode(), ErrorCodeEnum.SUCCESS.getDescription(), token);
+            }
+        }
+        return new Result(ErrorCodeEnum.USER_ERROR_A0201.getCode(), ErrorCodeEnum.USER_ERROR_A0201.getDescription(), null);
     }
 
     @GetMapping("test")

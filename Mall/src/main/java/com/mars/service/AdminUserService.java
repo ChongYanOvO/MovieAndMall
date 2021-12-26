@@ -4,4 +4,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.mars.entity.AdminUser;
 
 public interface AdminUserService extends IService<AdminUser> {
+    String login(AdminUser adminUser);
 }
