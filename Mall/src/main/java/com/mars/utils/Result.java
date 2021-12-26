@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Result {
-    private Long code;
+    private String code;
     private String msg;
     private Object data;
 }
