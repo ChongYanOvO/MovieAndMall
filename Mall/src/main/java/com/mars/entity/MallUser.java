@@ -1,18 +1,11 @@
 package com.mars.entity;
 
-import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
-/**
- * (MallUser)表实体类
- *
- * @author marsOvO
- * @since 2021-12-26 19:37:48
- */
-@SuppressWarnings("serial")
-public class MallUser extends Model<MallUser> {
+@Data
+public class MallUser {
     //用户主键id
     private Long userId;
     //用户昵称
@@ -32,87 +25,5 @@ public class MallUser extends Model<MallUser> {
     //修改时间
     private Date updateTime;
 
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public String getLoginName() {
-        return loginName;
-    }
-
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getIntroduceSign() {
-        return introduceSign;
-    }
-
-    public void setIntroduceSign(String introduceSign) {
-        this.introduceSign = introduceSign;
-    }
-
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public Integer getLockedFlag() {
-        return lockedFlag;
-    }
-
-    public void setLockedFlag(Integer lockedFlag) {
-        this.lockedFlag = lockedFlag;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    /**
-     * 获取主键值
-     *
-     * @return 主键值
-     */
-    @Override
-    protected Serializable pkVal() {
-        return this.userId;
-    }
-    }
+}
 

@@ -7,9 +7,6 @@ import com.mars.service.MallUserService;
 import com.mars.utils.ErrorCodeEnum;
 import com.mars.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,18 +19,6 @@ public class UserController {
     @Autowired
     private AdminUserService adminUserService;
 
-    //    @PostMapping("login")
-//    public ResponseEntity<Result> login(@RequestBody MallUser mallUser) {
-//        HttpHeaders headers = new HttpHeaders();
-//        if (mallUser != null) {
-//            String token = mallUserService.login(mallUser);
-//            if (token != null) {
-//                headers.set("token",token);
-//                return new ResponseEntity(new Result(200L, "登录成功", null),headers, HttpStatus.OK);
-//            }
-//        }
-//        return new ResponseEntity(new Result(402L, "登录失败", null),headers, HttpStatus.);
-//    }
     @PostMapping("login")
     public Result login(@RequestBody MallUser mallUser) {
         if (mallUser != null) {
